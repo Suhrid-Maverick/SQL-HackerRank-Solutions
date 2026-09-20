@@ -1,0 +1,6 @@
+WITH RECURSIVE t(n) AS (
+    SELECT 1
+    UNION ALL
+    SELECT n + 1 FROM t WHERE n < 20
+)
+SELECT REPEAT('* ', n) FROM t;
